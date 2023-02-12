@@ -23,10 +23,18 @@
  
   .then ((response) => response.json())
   .then ((data) => {
-    getPhotos = data.dog;
+    getPhotos = data.message;
     console.log(getPhotos)
+    let picture_data = "";
+        getPhotos.map((dogs) => {
+          console.log(dogs);
+          picture_data += `<div>
+         <img src= ${dogs} alt="">
+          <p class="">${dogs}</p>
+          </div>`;
     
   })
 
-  document.getElementById("dog").innerHTML 
+  document.getElementById("dog").innerHTML = picture_data
 
+  })
